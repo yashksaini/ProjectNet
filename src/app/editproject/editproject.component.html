@@ -1,0 +1,246 @@
+<!-- <div class="container mt-4">
+  <div class="row">
+    <div class="col-md-5 mt-1">
+      <label><b>Upload Project Image</b></label
+      ><br />
+      <small>(Upload image with 1:1 ratio for best look.)</small>
+      <input
+        class="form-control mb-3"
+        type="file"
+        id="formFile"
+        (change)="onSubmit($event)"
+        accept="image/*"
+        value="upload"
+      />
+      <div class="alert alert-success mt-2" *ngIf="message.length > 0">
+        {{ message }}
+      </div>
+      <label
+        ><b>Project Name <span class="star">*</span></b></label
+      >
+      <input
+        type="text"
+        class="form-control form-input mb-3"
+        placeholder="Project Name"
+        [(ngModel)]="p_name"
+      />
+      <label><b>Project Link</b></label>
+      <input
+        type="text"
+        class="form-control form-input mb-3"
+        placeholder="Project Link"
+        [(ngModel)]="p_link"
+      />
+
+      <label
+        ><b>Main language use <span class="star">*</span></b></label
+      >
+      <input
+        type="text"
+        class="form-control form-input mb-3"
+        placeholder="Main language used "
+        [(ngModel)]="p_main_lang"
+      />
+    </div>
+    <div class="col-md-7">
+      <div class="mb-3">
+        <label><b>About Project</b></label>
+        <angular-editor
+          [placeholder]="'About Project'"
+          [config]="editorConfig"
+          [(ngModel)]="about_det"
+        ></angular-editor>
+      </div>
+
+      <div class="mb-3">
+        <label
+          ><b>All languages used </b> <i class="fas fa-code icon"></i></label
+        ><br />
+        <small>Add each with comma seprated (eg. html5,css3)</small>
+        <angular-editor
+          [placeholder]="'Add languages used'"
+          [config]="editorConfig"
+          [(ngModel)]="all_lang"
+        ></angular-editor>
+        <label><b>Project Level</b></label
+        ><br />
+        <small>(1: Beginner, 2:Intermediate, 3:Advanced)</small>
+        <input
+          type="number"
+          class="form-control form-input mb-3"
+          max="3"
+          min="1"
+          placeholder="Level of project "
+          onkeyup="if(this.value >3 || this.value<1) this.value ='' "
+          [(ngModel)]="p_level"
+        />
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="mb-3">
+        <label><b>Inside Project Description</b></label>
+        <angular-editor
+          [placeholder]="'Key features of project.'"
+          [config]="editorConfig"
+          [(ngModel)]="key_feature"
+        ></angular-editor>
+      </div>
+      <div class="d-flex justify-content-center align-items-center">
+        <button
+          type="submit"
+          class="btn add_project"
+          [disabled]="!(p_name.length > 0 && p_main_lang.length > 0)"
+          (click)="updateProject()"
+        >
+          Update Project
+        </button>
+      </div>
+      <div class="alert alert-success mt-2" *ngIf="message2.length > 0">
+        {{ message2 }}
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="container-fluid mt-4">
+  <div class="row">
+    <div class="col-lg-3">
+      <p class="input_text">
+        Upload Project Image
+        <span class="info_box"
+          ><i class="fas fa-info-circle"></i>
+          <div class="tooltip_box">
+            (Upload image with 1:1 ratio for best look.)
+          </div></span
+        >
+      </p>
+      <input
+        class="input_box"
+        type="file"
+        id="formFile"
+        (change)="onSubmit($event)"
+        accept="image/*"
+        value="upload"
+      />
+      <div class="alert alert-success mt-2" *ngIf="message.length > 0">
+        {{ message }}
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="row">
+        <div class="col-md-6">
+          <p class="input_text">Project Name <span class="star">*</span></p>
+          <input
+            type="text"
+            class="input_box"
+            [(ngModel)]="p_name"
+            placeholder="Project Name"
+          />
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">
+            Project Level
+            <span class="star">*</span>
+            <span class="info_box"
+              ><i class="fas fa-info-circle"></i>
+              <div class="tooltip_box">
+                1: Beginner, 2:Intermediate, 3:Advanced
+              </div></span
+            >
+          </p>
+          <input
+            type="number"
+            max="3"
+            min="1"
+            onkeyup="if(this.value >3 || this.value<1) this.value ='' "
+            [(ngModel)]="p_level"
+            class="input_box"
+            placeholder="Project Level"
+          />
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">Project Link</p>
+          <input
+            type="text"
+            class="input_box"
+            [(ngModel)]="p_link"
+            placeholder="Project Link"
+          />
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">
+            Main language used <span class="star">*</span>
+          </p>
+          <input
+            type="text"
+            class="input_box"
+            [(ngModel)]="p_main_lang"
+            placeholder="Main Language Used"
+          />
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">
+            All languages used
+            <span class="star">*</span>
+            <span class="info_box"
+              ><i class="fas fa-info-circle"></i>
+              <div class="tooltip_box">
+                Add each with comma seprated (eg. html5,css3)
+              </div></span
+            >
+          </p>
+          <textarea
+            class="input_box1"
+            placeholder="All languages used"
+            [(ngModel)]="all_lang"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">
+            About Project
+            <span class="info_box"
+              ><i class="fas fa-info-circle"></i>
+              <div class="tooltip_box">Write the use of project.</div></span
+            >
+          </p>
+          <textarea
+            class="input_box1"
+            placeholder="About Project"
+            [(ngModel)]="about_det"
+            rows="3"
+          ></textarea>
+        </div>
+        <div class="col-12">
+          <p class="input_text">Detail explanation</p>
+          <angular-editor
+            [placeholder]="'Key features of project.'"
+            [config]="editorConfig"
+            [(ngModel)]="key_feature"
+            style="background-color: #fff"
+          ></angular-editor>
+        </div>
+        <div class="col-12">
+          <button
+            class="submit_btn"
+            [disabled]="
+              !(
+                p_name.length > 0 &&
+                p_main_lang.length > 0 &&
+                (p_level == '1' || p_level == '2' || p_level == '3') &&
+                all_lang.length > 0
+              )
+            "
+            (click)="updateProject()"
+          >
+            Update Project
+          </button>
+        </div>
+        <div class="col-12">
+          <div class="alert alert-success" *ngIf="message2.length > 0">
+            {{ message2 }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

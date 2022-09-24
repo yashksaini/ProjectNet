@@ -1,0 +1,30 @@
+.home_box {
+  background-color: #000080;
+  min-height: calc(100vh - (35px + 42px));
+  margin-top: 1px;
+  overflow: hidden;
+}
+.head_text {
+  font-size: 40px;
+  text-align: center;
+  color: white;
+}
+.head_small {
+  font-size: 20px;
+  text-align: center;
+  color: white;
+}
+.shape_icon {
+  text-align: center;
+  margin-top: 10px;
+  color: white;
+}
+.project_logo {
+  width: 200px;
+  height: auto;
+}
+.description {
+  padding: 25px;
+  color: white;
+  font-size: 16px;
+}

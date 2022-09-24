@@ -1,0 +1,337 @@
+/* User Profile Card Starts */
+.card {
+  width: 200px;
+  height: 270px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: none;
+  position: relative;
+  margin: 10px 20px;
+  box-shadow: 1px 1px 0 rgba(200, 200, 200, 0.5),
+    -1px -1px 0 rgba(200, 200, 200, 0.5);
+}
+.card_top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 200px;
+  background-color: #daeaff;
+  border-radius: 10px 10px 0 0;
+}
+.card img {
+  width: 120px;
+  aspect-ratio: 1;
+  position: absolute;
+  border-radius: 500px;
+  top: 20px;
+  left: 40px;
+}
+.card_bottom {
+  position: absolute;
+  top: 140px;
+  left: 0px;
+  text-align: center;
+}
+.card_bottom h1 {
+  font-size: 14px;
+  text-align: center;
+  line-height: 16px;
+  height: 16px;
+  overflow: hidden;
+  font-weight: 500px;
+  margin-top: 7px;
+  width: 200px;
+}
+.card_det {
+  height: 39px;
+  width: 200px;
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card_det div {
+  margin: 0 20px;
+}
+.card_det div h5 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: -9px;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.5);
+}
+.card_det div p {
+  font-style: normal;
+  font-weight: bold;
+  margin: -8px 0;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000000;
+}
+.card_bottom button {
+  width: 180px;
+  height: 35px;
+  border-radius: 500px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  border: 1px solid #1097f5;
+  color: #1097f5;
+  background-color: #fff;
+  margin-top: 12px;
+  transition: all 0.5s;
+}
+.card_bottom button:hover {
+  color: #f5f5f5;
+  background-color: #1097f5;
+  transition: all 0.5s;
+}
+.c_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (max-width: 600px) {
+  .card {
+    margin: 2px 5px;
+    width: 160px;
+  }
+  .card_top {
+    width: 160px;
+  }
+  .card img {
+    left: 20px;
+  }
+  .card_bottom h1 {
+    width: 160px;
+    font-size: 12px;
+  }
+  .card_det div {
+    margin: 0 5px;
+  }
+  .card_det {
+    width: 160px;
+  }
+  .card_bottom button {
+    width: 140px;
+  }
+  .card_det div h5 {
+    font-size: 12px;
+  }
+  .card_det div p {
+    font-size: 14px;
+  }
+  .card_bottom button {
+    font-size: 16px;
+  }
+}
+/* User Profile Card Ends */
+/* Top Bar Connectins */
+
+.conn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #f5f5f5;
+}
+.conn div {
+  width: 110px;
+  height: 30px;
+  text-align: center;
+}
+.conn div:first-child {
+  font-size: 25px;
+  line-height: 25px;
+  color: #1674ea;
+}
+.conn i {
+  font-size: 25px;
+  line-height: 25px;
+  color: #1097f5;
+}
+.conn a {
+  font-size: 18px;
+  line-height: 30px;
+  color: #fff;
+  background-color: #1674ea;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-decoration: none;
+  position: relative;
+}
+.conn a:hover {
+  color: #fff;
+  background-color: #1674ea;
+}
+.conn div a span {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: auto;
+  border-radius: 500px;
+  font-size: 14px;
+  line-height: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px 6px;
+  color: #fff;
+  background-color: #1674ea;
+}
+
+/* Top Bar Connectins End*/
+/* Modal CSS */
+#requestsent {
+  width: 100%;
+  height: 100vh;
+  background-color: #808080;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -200;
+  transition: top 1s, opacity 0.5s;
+  display: flex;
+  justify-content: center;
+}
+#requestsent:target {
+  z-index: 1000000;
+  opacity: 1;
+  background-color: #80808086;
+  transition: all 0.5s;
+}
+#requestrec {
+  width: 100%;
+  height: 100vh;
+  background-color: #808080;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -200;
+  transition: top 1s, opacity 0.5s;
+  display: flex;
+  justify-content: center;
+}
+#requestrec:target {
+  z-index: 1000000;
+  opacity: 1;
+  background-color: #80808086;
+  transition: all 0.5s;
+}
+.show_box {
+  width: 400px;
+  top: 0px;
+  position: absolute;
+  min-height: 200px;
+  background-color: #ececec;
+  max-height: calc(100vh - 40px);
+  height: auto;
+  transition: all 0.5s;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10000000;
+}
+#requestsent:target .show_box {
+  position: absolute;
+  top: 20px;
+  transition: all 0.5s;
+}
+#requestrec:target .show_box {
+  position: absolute;
+  top: 20px;
+  transition: all 0.5s;
+}
+.login_text {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+}
+/* Req-box Top */
+.show_box-req-top {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: 0px;
+  left: 0;
+  background-color: #1674ea;
+}
+.show_box-req-top h4 {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+.req-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  color: #f5f5f5;
+}
+.req-close:hover {
+  color: #ffffff;
+}
+/* Req-box Top Ends */
+
+/* Req-modal Body */
+
+.show_box-req-body {
+  max-height: calc(100vh - 90px);
+  position: relative;
+  background-color: #ececec;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.show_box-req-body::-webkit-scrollbar {
+  width: 5px;
+}
+.show_box-req-body::-webkit-scrollbar-track {
+  background: #fff;
+}
+.show_box-req-body::-webkit-scrollbar-thumb {
+  background: #1674ea;
+}
+.show_box-req-body::-webkit-scrollbar-thumb:hover {
+  background: #0b5cc0;
+}
+.req_box {
+  width: 320px;
+  height: 80px;
+  border-radius: 10px;
+  margin: 5px 5px;
+  background-color: #fff;
+}
+/* Req-modal Body Ends */
+@media only screen and (max-width: 768px) {
+  .show_box-req-body {
+    max-height: calc(100vh - 120px);
+  }
+  .show_box {
+    width: calc(100% - 20px);
+    border-radius: 5px;
+  }
+  #requestsent:target .show_box {
+    top: 10px;
+  }
+  .show_box-req-body::-webkit-scrollbar {
+    width: 2px;
+  }
+}
+/* Modal CSS Ends */

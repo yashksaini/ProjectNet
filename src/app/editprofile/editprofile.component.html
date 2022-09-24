@@ -1,0 +1,83 @@
+<div
+  class="container-fluid box"
+  *ngFor="let profile of profileData"
+  [class]="profile"
+>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="profile_pic">
+        <img src="{{ profile.data().imageURL }}" class="profileImg" />
+        <p class="input_text">Upload Image</p>
+        <input
+          class="input_box"
+          type="file"
+          id="formFile"
+          (change)="onSubmit($event)"
+          accept="image/*"
+          value="upload"
+        />
+        <p class="input_text mt-2">Name <i class="far fa-edit icon"></i></p>
+        <input type="text" class="input_box" [(ngModel)]="name" />
+      </div>
+      <button (click)="passwordChange()" class="changePassword">
+        Change Password
+      </button>
+      <div class="alert alert-success mt-2" *ngIf="messageForReset.length > 0">
+        {{ messageForReset }}
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="row">
+        <div class="col-12">
+          <p class="input_text">
+            About <i class="far fa-address-card icon"></i>
+          </p>
+          <textarea
+            class="input_box1"
+            rows="4"
+            [placeholder]="'About Yourself'"
+            [(ngModel)]="about_det"
+          ></textarea>
+        </div>
+        <div class="col-12">
+          <p class="input_text">Skills <i class="fas fa-code icon"></i></p>
+          <textarea
+            class="input_box1"
+            rows="3"
+            [placeholder]="'Add skill with comma seprated (eg. html5,css3)'"
+            [(ngModel)]="keyskills_det"
+          ></textarea>
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">
+            LinkedIn Link <i class="fab fa-linkedin icon"></i>
+          </p>
+          <input type="text" class="input_box" [(ngModel)]="linkedIn_link" />
+        </div>
+        <div class="col-md-6">
+          <p class="input_text">
+            Twitter Link <i class="fab fa-twitter-square icon"></i>
+          </p>
+          <input type="text" class="input_box" [(ngModel)]="twitter_link" />
+        </div>
+        <div class="col-12">
+          <button
+            class="submit_btn"
+            (click)="update()"
+            [disabled]="name.length < 3"
+          >
+            Update
+          </button>
+        </div>
+        <div class="col-12">
+          <div class="alert alert-success mt-2" *ngIf="message.length > 0">
+            {{ message }}
+          </div>
+          <div class="alert alert-success mt-2" *ngIf="message2.length > 0">
+            {{ message2 }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

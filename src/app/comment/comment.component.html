@@ -1,0 +1,34 @@
+<div class="container-fluid p-0">
+  <h3 class="head_text">All Comments</h3>
+  <input
+    class="input_comment form-control"
+    placeholder="Comment on this project.."
+    [(ngModel)]="comment_text"
+  />
+  <button
+    class="add_btn btn"
+    type="submit"
+    [disabled]="!(comment_text.length > 0)"
+    (click)="addComment()"
+  >
+    Add <i class="fas fa-plus"></i>
+  </button>
+  <div class="all_comments">
+    <div class="comment_content" *ngFor="let comment of commentData">
+      <div class="c_text">
+        {{ comment.comment }}
+        <span
+          routerLink="/profile/{{ comment.commentBy }}"
+          data-bs-dismiss="modal"
+          >~@{{ comment.name }}
+        </span>
+        <p class="date">
+          {{ comment.created.toDate() | date: "MMM dd, yyyy (h:mm a)" }}
+        </p>
+      </div>
+    </div>
+    <div class="comment_content mutedText" *ngIf="commentData.length == 0">
+      <p>Comments appear here. . .</p>
+    </div>
+  </div>
+</div>

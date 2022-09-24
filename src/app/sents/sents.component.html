@@ -1,0 +1,16 @@
+<div class="rec_card" *ngFor="let user of all_conn">
+  <img src="{{ user.imageURL }}" />
+  <div class="rec_name">{{ user.name }}</div>
+  <div class="rec_profile" routerLink="/profile/{{ user.id }}">
+    <i class="fas fa-user-circle"></i>
+  </div>
+  <div class="rec_tic" (click)="aprove(user.connection)">
+    <i class="fas fa-times-circle"></i>
+  </div>
+</div>
+<div
+  class="rec_card d-flex justify-content-center align-items-center"
+  *ngIf="this.requests == 0"
+>
+  <div>No Sent Requests</div>
+</div>

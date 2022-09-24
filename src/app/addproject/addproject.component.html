@@ -1,0 +1,115 @@
+<div class="container-fluid" style="min-height: 100vh">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <h2 class="head_text">
+        Add Project <i class="fas fa-project-diagram"></i>
+      </h2>
+    </div>
+    <div class="col-md-6">
+      <p class="input_text">Project Name <span class="star">*</span></p>
+      <input
+        type="text"
+        class="input_box"
+        [(ngModel)]="p_name"
+        placeholder="Project Name"
+      />
+    </div>
+    <div class="col-md-6">
+      <p class="input_text">
+        Project Level
+        <span class="star">*</span>
+        <span class="info_box"
+          ><i class="fas fa-info-circle"></i>
+          <div class="tooltip_box">
+            1: Beginner, 2:Intermediate, 3:Advanced
+          </div></span
+        >
+      </p>
+      <input
+        type="number"
+        max="3"
+        min="1"
+        onkeyup="if(this.value >3 || this.value<1) this.value ='' "
+        [(ngModel)]="p_level"
+        class="input_box"
+        placeholder="Project Level"
+      />
+    </div>
+    <div class="col-md-6">
+      <p class="input_text">Project Link</p>
+      <input
+        type="text"
+        class="input_box"
+        [(ngModel)]="p_link"
+        placeholder="Project Link"
+      />
+    </div>
+    <div class="col-md-6">
+      <p class="input_text">Main language used <span class="star">*</span></p>
+      <input
+        type="text"
+        class="input_box"
+        [(ngModel)]="p_main_lang"
+        placeholder="Main Language Used"
+      />
+    </div>
+    <div class="col-md-6">
+      <p class="input_text">
+        All languages used
+        <span class="star">*</span>
+        <span class="info_box"
+          ><i class="fas fa-info-circle"></i>
+          <div class="tooltip_box">
+            Add each with comma seprated (eg. html5,css3)
+          </div></span
+        >
+      </p>
+      <textarea
+        class="input_box1"
+        placeholder="All languages used"
+        [(ngModel)]="all_lang"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="col-md-6">
+      <p class="input_text">
+        About Project
+        <span class="info_box"
+          ><i class="fas fa-info-circle"></i>
+          <div class="tooltip_box">Write the use of project.</div></span
+        >
+      </p>
+      <textarea
+        class="input_box1"
+        placeholder="About Project"
+        [(ngModel)]="about_det"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="col-12">
+      <p class="input_text">Detail explanation</p>
+      <angular-editor
+        [placeholder]="'Key features of project.'"
+        [config]="editorConfig"
+        [(ngModel)]="key_feature"
+        style="background-color: #fff"
+      ></angular-editor>
+    </div>
+    <div class="col-12">
+      <button
+        class="submit_btn"
+        [disabled]="
+          !(
+            p_name.length > 0 &&
+            p_main_lang.length > 0 &&
+            (p_level == '1' || p_level == '2' || p_level == '3') &&
+            all_lang.length > 0
+          )
+        "
+        (click)="addProject()"
+      >
+        Add Project
+      </button>
+    </div>
+  </div>
+</div>

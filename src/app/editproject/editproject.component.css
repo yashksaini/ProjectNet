@@ -1,0 +1,143 @@
+/* .form-input {
+  padding: 12px;
+  border-radius: 0px;
+}
+.form-input:focus {
+  box-shadow: none;
+}
+.add_project {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 500px;
+  color: white;
+  background-color: #000080;
+  transition: all 0.5s;
+}
+.add_project:hover {
+  width: 260px;
+  box-shadow: #00000040 0px 25px 50px -12px;
+  background-color: #0000ff;
+  transition: all 0.5s;
+}
+.star {
+  color: red;
+} */
+/* .form-input {
+  padding: 12px;
+  border-radius: 0px;
+}
+.form-input:focus {
+  box-shadow: none;
+}
+.add_project {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  border-radius: 500px;
+  color: white;
+  background-color: #000080;
+  transition: all 0.5s;
+}
+.add_project:hover {
+  width: 260px;
+  box-shadow: #00000040 0px 25px 50px -12px;
+  background-color: #0000ff;
+  transition: all 0.5s;
+}
+*/
+.star {
+  color: red;
+  font-size: 16px;
+  margin: 0px 5px;
+}
+.head_text {
+  font-size: 32px;
+  line-height: 30px;
+  color: #1674ea;
+  font-weight: 600;
+  margin: 15px 0;
+}
+.head_text i {
+  color: #0b5cc0;
+}
+.input_box {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #b8b8b8;
+  padding: 5px 10px;
+  margin: 0 0 12px 0;
+}
+.input_box:focus {
+  border: 2px solid #1674ea;
+  outline: none;
+}
+.input_text {
+  font-size: 16px;
+  line-height: 14px;
+  color: #474747;
+  font-weight: 600;
+}
+.input_text i {
+  font-size: 14px;
+  color: #1674ea;
+}
+.input_box1 {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid #b8b8b8;
+  padding: 5px 10px;
+  margin: 0 0 12px 0;
+  resize: none;
+}
+.input_box1:focus {
+  border: 2px solid #1674ea;
+  outline: none;
+}
+.submit_btn {
+  font-size: 16px;
+  width: auto;
+  padding: 10px 35px;
+  color: #fff;
+  background-color: #1674ea;
+  border-radius: 12px;
+  border: none;
+  margin: 20px 0px;
+}
+.submit_btn:hover {
+  background-color: #0b5cc0;
+}
+.submit_btn:disabled {
+  background-color: #69aafc;
+}
+.info_box:hover {
+  cursor: help;
+}
+.tooltip_box {
+  opacity: 0;
+  z-index: -100;
+  position: fixed;
+  right: -16px;
+  line-height: 24px;
+  top: 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 5px 10px;
+  font-weight: 400;
+  background-color: #1674ea;
+  border: none;
+  color: #fff;
+  white-space: normal;
+  max-width: 320px;
+  transition: opacity 2s, right 2s, z-index 2s;
+}
+.info_box:hover .tooltip_box {
+  z-index: 100;
+  opacity: 1;
+  right: 16px;
+  transition: opacity 0.4s, right 0.4s;
+}

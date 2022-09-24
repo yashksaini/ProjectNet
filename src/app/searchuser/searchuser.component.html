@@ -1,0 +1,218 @@
+<!-- *ngIf="!loggedIn" -->
+<div class="search_section">
+  <!-- Search Bar -->
+  <div class="s_box">
+    <div class="search_box">
+      <button class="search_icon"><i class="fas fa-search"></i></button>
+      <input
+        type="text"
+        [(ngModel)]="search_u"
+        type="search"
+        placeholder="{{ placeholder_value }}"
+        aria-label="Search"
+      />
+      <button class="search_btn" (click)="search()" ng-enter="search()">
+        <span>Search</span><span><i class="fas fa-search"></i></span>
+      </button>
+    </div>
+  </div>
+  <div class="results" *ngIf="displayString.length > 0">
+    Total Results for &nbsp; <b>"{{ displayString }}"</b>&nbsp; are &nbsp;
+    <b>
+      <span *ngIf="current1.length == 0">{{ current.length }}</span
+      ><span *ngIf="current.length == 0 && current1.length > 0">{{
+        current1.length
+      }}</span>
+    </b>
+  </div>
+  <!-- Radio Buttons -->
+  <div class="s_box1" *ngIf="loggedIn">
+    <div class="search_option">
+      <input
+        type="radio"
+        class="radio_btn form-check-input"
+        [(ngModel)]="search_res"
+        value="1"
+        (change)="change1()"
+        checked="true"
+      />
+      <label class="label">Users</label>
+      <input
+        type="radio"
+        class="radio_btn form-check-input"
+        [(ngModel)]="search_res"
+        value="2"
+        (change)="change1()"
+      />
+      <label class="label">Projects</label>
+    </div>
+  </div>
+
+  <div class="c_box">
+    <div
+      class="card animate__animated animated animate__fadeIn"
+      *ngFor="let user of current"
+    >
+      <div class="card_top">
+        <img src="{{ user.imageURL }}" />
+      </div>
+      <div class="card_bottom">
+        <h1>{{ user.name }}</h1>
+        <div class="card_det">
+          <div>
+            <h5>Projects</h5>
+            <p>{{ user.totalProjects }}</p>
+          </div>
+          <div>
+            <h5>Network</h5>
+            <p>{{ user.totalConnections }}</p>
+          </div>
+        </div>
+        <a routerLink="/profile/{{ user.id }}">View Profile</a>
+        <a href="/home#signup" *ngIf="!loggedIn">View Profile</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="c_box" *ngIf="!loggedIn">
+    <a
+      class="prj_card animate__animated animated animate__fadeIn"
+      *ngFor="let project of current1"
+      href="home#signup"
+    >
+      <div class="prj_card_top">
+        <div><img src="{{ project.img_url }}" /></div>
+        <span>{{ project.main_lang }}</span>
+      </div>
+      <div class="prj_card_bottom">
+        <div class="prj_card_det">
+          <span>{{ project.project_name }}</span>
+          <span>{{ project.created.toDate() | date: "MMM-yy" }}</span>
+        </div>
+        <div class="prj_link">
+          <div>
+            <i class="far fa-heart"></i> <span>{{ project.totalLikes }}</span>
+          </div>
+          <div>
+            <i class="far fa-comment"></i>
+            <span>{{ project.totalComments }}</span>
+          </div>
+          <div>View <i class="fas fa-angle-double-right"></i></div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="c_box" *ngIf="loggedIn">
+    <div
+      class="prj_card animate__animated animated animate__fadeIn"
+      *ngFor="let project of current1"
+      routerLink="/view/{{ project.p_id }}"
+    >
+      <div class="prj_card_top">
+        <div><img src="{{ project.img_url }}" /></div>
+        <span>{{ project.main_lang }}</span>
+      </div>
+      <div class="prj_card_bottom">
+        <div class="prj_card_det">
+          <span>{{ project.project_name }}</span>
+          <span>{{ project.created.toDate() | date: "MMM-yy" }}</span>
+        </div>
+        <div class="prj_link">
+          <div>
+            <i class="far fa-heart"></i> <span>{{ project.totalLikes }}</span>
+          </div>
+          <div>
+            <i class="far fa-comment"></i>
+            <span>{{ project.totalComments }}</span>
+          </div>
+          <div>View <i class="fas fa-angle-double-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Home Page -->
+
+<div class="container-fluid" *ngIf="!loggedIn">
+  <h1 class="home_heading">ProjectNet</h1>
+  <p class="sub_heading">A project sharing platform</p>
+  <div class="cards_wrap">
+    <div class="home_card">
+      <div class="card_icon"><i class="fab fa-searchengin"></i></div>
+      <div class="card_content">
+        <p>Search</p>
+        <p>projects by</p>
+        <p>Name</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fas fa-tasks"></i></div>
+      <div class="card_content">
+        <p>Projects by</p>
+        <p>programming</p>
+        <p>language</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fas fa-thumbs-up"></i></div>
+      <div class="card_content">
+        <p>Like</p>
+        <p>&</p>
+        <p>Comment</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fas fa-puzzle-piece"></i></div>
+      <div class="card_content">
+        <p>Add projects</p>
+        <p>with</p>
+        <p>features</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fab fa-connectdevelop"></i></div>
+      <div class="card_content">
+        <p>Connect</p>
+        <p>with</p>
+        <p>developers</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fas fa-link"></i></div>
+      <div class="card_content">
+        <p>Get</p>
+        <p>projects</p>
+        <p>link</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fas fa-share-alt"></i></div>
+      <div class="card_content">
+        <p>Share</p>
+        <p>your</p>
+        <p>projects</p>
+      </div>
+    </div>
+    <div class="home_card">
+      <div class="card_icon"><i class="fas fa-file-alt"></i></div>
+      <div class="card_content">
+        <p>Read</p>
+        <p>detailed</p>
+        <p>description</p>
+      </div>
+    </div>
+    <a class="home_card1" href="home#signup">
+      <div class="card_icon"><i class="fas fa-user"></i></div>
+      <div class="card_content">
+        <p>Create</p>
+        <p>Free</p>
+        <p>Account</p>
+      </div>
+    </a>
+  </div>
+  <p class="copyright">
+    Designed and Developed by <b>Yash Kumar Saini</b><br />
+    © 2021 All Rights Reserved.
+  </p>
+</div>

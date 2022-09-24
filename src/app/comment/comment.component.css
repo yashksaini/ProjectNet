@@ -1,0 +1,83 @@
+.head_text {
+  font-size: 20px;
+  color: #1097f5;
+}
+.add_btn {
+  width: 140px;
+  font-size: 16px;
+  padding: 5px 0px;
+  color: white;
+  background-color: #1097f5;
+  border-radius: 12px;
+  border: none;
+  float: right;
+  margin-bottom: 10px;
+  transition: all 0.5s;
+}
+.add_btn:hover {
+  border: 1px solid #2496ff;
+  background-color: white;
+  color: #2496ff;
+  transition: all 0.5s;
+}
+
+.input_comment {
+  padding: 15px;
+  margin: 5px 0;
+  border-radius: 12px;
+  background-color: white;
+}
+.input_comment:focus {
+  box-shadow: none;
+}
+.box {
+  padding: 0;
+}
+.comment_content {
+  width: 100%;
+  margin-top: 5px;
+}
+.all_comments {
+  max-height: 240px;
+  overflow-y: auto;
+  width: 100%;
+}
+.all_comments::-webkit-scrollbar {
+  width: 5px;
+}
+.all_comments::-webkit-scrollbar-track {
+  background: #fff;
+}
+.all_comments::-webkit-scrollbar-thumb {
+  background: #1674ea;
+}
+.all_comments::-webkit-scrollbar-thumb:hover {
+  background: #0b5cc0;
+}
+.c_text {
+  padding: 10px 15px 5px 15px;
+  border-radius: 12px;
+  background-color: white;
+  width: 100%;
+  color: #474747;
+  text-align: left;
+  border: solid 1px #d8d8d8;
+}
+.mutedText {
+  color: #8f8f8f;
+}
+.c_text span,
+i {
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.c_text span:hover {
+  cursor: pointer;
+  color: #2496ff;
+}
+.date {
+  font-size: 11px;
+  text-align: right;
+  margin: 0px;
+}

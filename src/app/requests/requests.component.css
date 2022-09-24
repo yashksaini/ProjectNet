@@ -1,0 +1,99 @@
+/* Rec Card CSS */
+.box {
+  margin: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rec_card {
+  width: 320px;
+  height: 80px;
+  border-radius: 10px;
+  background-color: #fff;
+  position: relative;
+  margin: 5px;
+}
+.rec_card img {
+  position: absolute;
+  left: 6px;
+  top: 5px;
+  width: 70px;
+  aspect-ratio: 1;
+  border-radius: 500px;
+  transition: all 0.5s;
+}
+.rec_name {
+  width: 140px;
+  height: 70px;
+  position: absolute;
+  left: 76px;
+  top: 5px;
+  text-align: center;
+  padding: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 19px;
+  transition: all 0.5s;
+}
+.rec_profile {
+  position: absolute;
+  left: 216px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 500px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+.rec_profile i {
+  font-size: 40px;
+  line-height: 40px;
+  color: #0b5cc0;
+  transition: all 0.5s;
+}
+.rec_profile:hover {
+  background-color: #0b5cc0;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.rec_profile:hover i {
+  color: #f5f5f5;
+  transition: all 0.5s;
+}
+.rec_tic {
+  position: absolute;
+  left: 267px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 500px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+.rec_tic {
+  font-size: 40px;
+  color: #47c30c;
+  transition: all 0.5s;
+}
+.rec_tic:hover {
+  background-color: #47c30c;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.rec_tic:hover i {
+  color: #f5f5f5;
+  transition: all 0.5s;
+}
+
+/* Rec Card CSS Ends */

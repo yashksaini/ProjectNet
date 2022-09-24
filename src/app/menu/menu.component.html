@@ -1,0 +1,156 @@
+<div>
+  <div class="logo_name">
+    <img src="../../assets/name.png" />
+    <img src="../../assets/logo.png" />
+  </div>
+  <div class="links_tab" *ngIf="loggedIn">
+    <button
+      routerLink="/search"
+      [ngClass]="{ current: step === 0 || step === 4 }"
+      class="nav_btn"
+    >
+      <i class="fas fa-search"></i><span>Search</span>
+    </button>
+    <button
+      routerLink="/network"
+      class="nav_btn"
+      [ngClass]="{ current: step === 1 }"
+    >
+      <i class="fas fa-users"></i><span>My Network</span>
+    </button>
+    <button
+      routerLink="/project"
+      class="nav_btn"
+      [ngClass]="{ current: step === 2 }"
+    >
+      <i class="fas fa-plus-circle"></i><span>Add Project</span>
+    </button>
+    <button
+      routerLink="/profile/{{ user.uid }}"
+      class="nav_btn"
+      [ngClass]="{ current: step === 3 }"
+    >
+      <i class="fas fa-user-circle"></i><span>Profile</span>
+    </button>
+    <a href="{{ urlEnd }}#logout" class="nav_btn" id="logout_btn">
+      <i class="fas fa-sign-out-alt"></i><span>Log Out</span>
+    </a>
+  </div>
+  <div class="links_tab" *ngIf="!loggedIn">
+    <a href="home#signup" class="nav_btn1"> SignUp </a>
+    <a href="home#login" class="nav_btn1"> Login </a>
+  </div>
+</div>
+
+<!-- SignUp box -->
+<div id="signup">
+  <div class="show_box-top">
+    <img src="../../assets/logo.png" />
+    <div><span>Welcome</span> to <span>ProjectNet</span></div>
+    <a href="home#" class="close"><i class="fas fa-times"></i></a>
+  </div>
+  <div class="show_box-body">
+    <app-signup></app-signup>
+  </div>
+</div>
+<!-- Signup box end -->
+
+<!-- Login Box  -->
+<div id="login">
+  <div class="show_box-top">
+    <img src="../../assets/logo.png" />
+    <div><span>Welcome</span> to <span>ProjectNet</span></div>
+    <a href="home#" class="close" id="login-close"
+      ><i class="fas fa-times"></i
+    ></a>
+  </div>
+  <div class="show_box-body">
+    <app-login></app-login>
+  </div>
+</div>
+<!-- Logout box -->
+<div id="logout">
+  <div class="show_box">
+    <div class="show_box-req-top">
+      <h4>ProjectNet</h4>
+      <a class="req-close" href="{{ urlEnd }}#"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="show_box-req-body">
+      <div>
+        <h5>Thanks for using this website.</h5>
+        <p>Really want to Logout?</p>
+        <div class="btn_box">
+          <a (click)="logout()" href="{{ urlEnd }}#">Yes</a>
+          <a href="{{ urlEnd }}#">No</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Logout box end -->
+
+<!-- Reset Password box -->
+<div id="reset">
+  <div class="show_box-top">
+    <img src="../../assets/logo.png" />
+    <div><span>Welcome</span> to <span>ProjectNet</span></div>
+    <a href="home#" class="close"><i class="fas fa-times"></i></a>
+  </div>
+  <div class="show_box-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 p-0 logo_box">
+          <div class="left_box">
+            <img src="../../assets/l_logo.png" />
+          </div>
+        </div>
+        <div class="col-md-6 right_box">
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+            <h1 class="head_text mt-3">Reset Password</h1>
+            <div class="row">
+              <div class="col-md-12">
+                <p class="text_label mb-2 mt-2">Enter your ProjectNet Email</p>
+                <input
+                  type="email"
+                  class="input_box mt-4"
+                  placeholder="Email"
+                  [formControl]="myForm.controls['email']"
+                />
+                <div
+                  class="alert alert-warning mb-2"
+                  *ngIf="
+                    !myForm.controls['email'].valid &&
+                    myForm.controls['email'].touched
+                  "
+                >
+                  A valid email is required
+                </div>
+              </div>
+              <div class="col-md-12" style="text-align: center">
+                <button class="submit_btn" [disabled]="!myForm.valid">
+                  Reset Password
+                </button>
+                <a href="home#login" class="login_text1"
+                  >Know your password? LogIn Here</a
+                >
+                <div
+                  class="alert alert-danger mt-2"
+                  *ngIf="userError.length > 0"
+                >
+                  {{ userError }}
+                </div>
+                <div
+                  class="alert alert-success mt-2"
+                  *ngIf="message.length > 0"
+                >
+                  {{ message }}
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Reset Password box end -->

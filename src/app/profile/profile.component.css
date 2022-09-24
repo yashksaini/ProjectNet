@@ -1,0 +1,805 @@
+/* Profile Page Start */
+.profile_head {
+  display: flex;
+  justify-content: left;
+  position: relative;
+}
+.message {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #808080;
+}
+.totalData {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.totalData span {
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.totalData span:first-child {
+  color: #f91980;
+}
+.totalData span:last-child {
+  color: #1da1f2;
+}
+.totalData span b {
+  margin-left: 16px;
+}
+.profile_box {
+  padding: 36px 30px 10px 30px;
+  position: relative;
+}
+.verified {
+  position: absolute;
+  bottom: 25px;
+  right: 35px;
+  width: 30px !important;
+  height: 30px !important;
+}
+.profile_box img:first-child {
+  width: 160px;
+  height: 160px;
+  border: 3px solid #1674ea;
+  border-radius: 500px;
+  margin-top: -12px;
+}
+.profile_box h1 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 32px;
+}
+.profile_box h1 i {
+  font-size: 22px;
+  color: #2dcc70;
+}
+.profile_box h4 {
+  font-weight: normal;
+  color: #808080;
+  font-size: 18px;
+  line-height: 22px;
+}
+.profile_box p {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #0b5cc0;
+  margin: 12px 0;
+}
+.profile_box p:hover {
+  cursor: pointer;
+  color: #1097f5;
+}
+
+.profile_box i:hover {
+  cursor: pointer;
+}
+.profile_head button {
+  position: absolute;
+  top: 30px;
+  right: 36px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 26px;
+  background: #fefefe;
+  border: 2px solid #a7a7a7;
+  border-radius: 500px;
+  transition: all 0.3s;
+}
+.profile_head .anchor {
+  position: absolute;
+  top: 30px;
+  right: 36px;
+  width: 150px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 26px;
+  background: #fefefe;
+  border: 2px solid #a7a7a7;
+  border-radius: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s;
+}
+.profile_head button:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.profile_head .anchor:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.profile_icon {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  position: absolute;
+  top: 80px;
+  right: 36px;
+}
+.profile_icon i {
+  font-size: 35px;
+  padding: 10px 15px 10px 0;
+  color: #1097f5;
+}
+.profile_content {
+  padding: 20px 35px;
+}
+.profile_content h1 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 30px;
+}
+.skill {
+  padding: 7px 12px;
+  background-color: #0b5cc0;
+  color: white;
+  font-size: 14px;
+  border-radius: 500px;
+  margin: 5px 5px;
+  font-weight: 400;
+}
+.projects_count {
+  font-size: 24px;
+  line-height: 20px;
+  text-align: left;
+  padding: 7px 47px;
+}
+.profile_head h3 {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 36px;
+}
+.profile_head img {
+  width: 120px;
+  height: auto;
+}
+@media only screen and (max-width: 992px) {
+  .profile_box img:first-child {
+    width: 120px !important;
+    height: 120px !important;
+    margin-top: 0px;
+  }
+  .verified {
+    right: 70px;
+  }
+  .profile_head button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    top: 80px;
+    right: 20px;
+  }
+  .profile_head .anchor {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    top: 80px;
+    right: 20px;
+  }
+  .profile_head {
+    display: block;
+  }
+  .profile_box {
+    padding: 10px 10px 10px 20px;
+    max-width: 220px;
+  }
+  .profile_box h1 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .profile_box h1 i {
+    font-size: 16px;
+  }
+  .profile_box h4 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .profile_box p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .profile_head h3 {
+    display: block;
+    right: 20px;
+  }
+  .profile_icon {
+    top: 130px;
+    right: 20px;
+  }
+  .profile_content {
+    padding: 10px 10px 10px 10px;
+  }
+  .profile_content h1 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+  .profile_content p {
+    font-size: 14px;
+    line-height: 21px;
+  }
+  .skill {
+    padding: 5px 8px;
+    font-size: 11px;
+    margin: 3px 3px;
+    font-weight: 400;
+  }
+  .projects_count {
+    font-size: 18px;
+    line-height: 16px;
+    font-weight: 600;
+    padding: 20px 20px 0px 20px;
+  }
+}
+/* Profile Page End */
+
+/* Project Card Start */
+
+.prj_card {
+  width: 250px;
+  height: 350px;
+  margin: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.prj_card:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 4px rgb(230, 230, 230, 0.5),
+    -1px -1px 4px rgb(230, 230, 230, 0.5);
+  /* background-color: #f3f3f3; */
+  transform: translateY(-10px);
+  transition: all 0.5s;
+}
+
+.prj_card:hover .fa-long-arrow-alt-right {
+  transition: all 0.5s;
+  color: #1674ea;
+}
+
+.prj_card_top {
+  height: 250px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 1px 0px rgb(230, 230, 230, 0.5);
+}
+
+.prj_card_top div img {
+  width: auto;
+  max-width: 230px;
+  border-radius: 16px;
+  height: auto;
+  max-height: 230px;
+}
+
+.prj_card_top span {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 15px 0 10px 0;
+  padding: 5px;
+  height: 30px;
+  min-width: 100px;
+  background-color: #1674ea;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.prj_card_bottom {
+  position: absolute;
+  top: 250px;
+  left: 0px;
+}
+
+.prj_card_det {
+  margin: 10px 10px;
+  width: 230px;
+  height: 25px;
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.prj_card_det span:first-child {
+  font-weight: 500;
+  font-size: 14px;
+  margin-right: 10px;
+  color: #1f1f1f;
+  line-height: 25px;
+  width: 160px;
+  height: 25px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: capitalize !important;
+}
+
+.prj_card_det span:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  width: 60px;
+  height: 25px;
+  text-align: center;
+  color: white;
+  background-color: #0b5cc0;
+  border-radius: 100px;
+}
+
+.prj_link {
+  width: 230px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.prj_link div:first-child {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60px;
+  font-size: 23px;
+  line-height: 23px;
+  color: #f91980;
+}
+
+.prj_link div {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60px;
+  font-size: 23px;
+  line-height: 23px;
+  color: #1097f5;
+}
+
+.prj_link div:last-child {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  font-size: 16px;
+  padding: 0px;
+  line-height: 40px;
+  color: #1f1f1f;
+}
+.prj_link div:last-child i {
+  margin-left: 8px;
+}
+
+.prj_link span {
+  font-size: 16px;
+  line-height: 23px;
+  font-weight: 500;
+  margin-left: 5px;
+  color: #1f1f1f;
+}
+
+@media only screen and (max-width: 600px) {
+  .prj_card {
+    width: 160px;
+    height: 230px;
+    border-radius: 10px;
+    margin: 10px 5px;
+  }
+
+  .prj_card_top {
+    height: 160px;
+    width: 160px;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .prj_card_top div img {
+    width: auto;
+    max-width: 150px;
+    height: auto;
+    max-height: 150px;
+  }
+
+  .prj_card_top span {
+    border-radius: 10px 0 5px 0;
+    padding: 3px;
+    height: auto;
+    min-width: 60px;
+    max-width: 120px;
+    overflow: hidden;
+    font-size: 10px;
+    line-height: auto;
+  }
+
+  .prj_card_bottom {
+    position: absolute;
+    top: 160px;
+    left: 0px;
+  }
+
+  .prj_card_det {
+    margin: 5px 5px;
+    width: 150px;
+    height: 25px;
+  }
+
+  .prj_card_det span:first-child {
+    font-size: 13px;
+    margin-right: 5px;
+    width: 100px;
+  }
+
+  .prj_card_det span:last-child {
+    font-size: 9px;
+    width: 40px;
+    height: auto;
+    padding: 10px auto;
+  }
+
+  .prj_link {
+    width: 150px;
+    height: 20px;
+    margin: 5px 5px;
+  }
+
+  .prj_link div:first-child {
+    width: 55px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .prj_link div {
+    width: 55px;
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .prj_link div:last-child {
+    width: 40px;
+    font-size: 11px !important;
+    height: 20px;
+    font-size: 20px;
+    line-height: 25px;
+  }
+  .prj_link div:last-child i {
+    margin-left: 2px;
+  }
+
+  .prj_link span {
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+.c_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f7f7f7;
+}
+/* Project Card Ends */
+
+/* User Profile Card Starts */
+.profile_card {
+  padding: 10px;
+  width: 100%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 16px;
+}
+.p_img {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.p_name {
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: #474747;
+  margin-top: 15px;
+}
+.p_email {
+  font-size: 13px;
+  text-align: center;
+  color: #474747;
+}
+.p_display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 40px;
+  background-color: #f7f7f7;
+  border-radius: 12px;
+  text-align: center;
+}
+.p_display div {
+  width: 50%;
+}
+.p_button {
+  width: 100%;
+  height: 40px;
+  color: white;
+  background-color: #1da1f2;
+  border-radius: 12px;
+  margin-top: 10px;
+  border: none;
+  transition: all 0.5s;
+}
+.p_button:hover {
+  background-color: #0000ff;
+  transition: all 0.5s;
+}
+/* .modal-dialog {
+  max-height: calc(100vh - (30px + 20px));
+  overflow-y: auto;
+} */
+.modal.fade {
+  z-index: 10000000 !important;
+}
+/* User Profile Card Ends */
+@media only screen and (max-width: 900px) {
+  .project_img {
+    width: 100%;
+    aspect-ratio: 20/9;
+  }
+  .project_card {
+    width: 100%;
+  }
+}
+/* Remove Modal */
+#removeuser {
+  width: 100%;
+  height: 100vh;
+  background-color: #808080;
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  opacity: 0;
+  z-index: -200;
+  transition: top 0s, opacity 0.5s;
+  display: flex;
+  justify-content: center;
+}
+#removeuser:target {
+  z-index: 1000000;
+  opacity: 1;
+  top: 0;
+  background-color: #80808086;
+  transition: opacity 0.5s;
+}
+.show_box {
+  width: 500px;
+  top: 0px;
+  position: absolute;
+  min-height: 100px;
+  background-color: #fcfcfc;
+  max-height: calc(100vh - 40px);
+  height: auto;
+  transition: all 0.5s;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 10000000;
+}
+#removeuser:target .show_box {
+  position: absolute;
+  top: 20px;
+  transition: all 0.5s;
+}
+.login_text {
+  position: fixed;
+  top: 50px;
+  left: 20px;
+}
+/* Rem-box Top */
+.show_box-req-top {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  top: 0px;
+  left: 0;
+  background-color: #1674ea;
+}
+.show_box-req-top h4 {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 500;
+}
+.req-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  line-height: 30px;
+  color: #f5f5f5;
+}
+.req-close:hover {
+  color: #ffffff;
+}
+/* Rem-box Top Ends */
+
+/* Rem-modal Body */
+
+.show_box-req-body {
+  max-height: calc(100vh - 90px);
+  position: relative;
+  background-color: #fcfcfc;
+  top: 0;
+  left: 0;
+  padding: 20px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  text-align: center;
+  padding: 10px 20px;
+  width: 100%;
+}
+.show_box-req-body::-webkit-scrollbar {
+  width: 5px;
+}
+.show_box-req-body::-webkit-scrollbar-track {
+  background: #fff;
+}
+.show_box-req-body::-webkit-scrollbar-thumb {
+  background: #1674ea;
+}
+.show_box-req-body::-webkit-scrollbar-thumb:hover {
+  background: #0b5cc0;
+}
+.req_box {
+  width: 320px;
+  height: 80px;
+  border-radius: 10px;
+  margin: 5px 5px;
+  background-color: #fff;
+}
+.btn_box {
+  width: 100%;
+  margin: 20px 0;
+}
+.btn_box a {
+  width: 80px;
+  text-decoration: none;
+  height: auto;
+  color: #1f1f1f;
+  padding: 5px 15px;
+  background-color: #f5f5f5;
+  border: 1px #808080 solid;
+  margin: 0px 10px;
+  border-radius: 500px;
+}
+.btn_box a:hover {
+  cursor: pointer;
+  color: #1f1f1f;
+  background-color: #e7e7e7;
+}
+/* Rem-modal Body Ends */
+@media only screen and (max-width: 768px) {
+  .show_box {
+    width: calc(100% - 20px);
+    border-radius: 5px;
+  }
+  .show_box-req-body::-webkit-scrollbar {
+    width: 2px;
+  }
+}
+/* Remove User Modal */
+/* Edit Profile Modal */
+#editprofile {
+  width: 100%;
+  height: 100vh;
+  background-color: #fff;
+  position: fixed;
+  top: -100vh;
+  opacity: 0;
+  left: 0px;
+  z-index: -200;
+}
+#editprofile:target {
+  top: 0px;
+  position: fixed;
+  z-index: 2147483647;
+  opacity: 1;
+  transition: top 0.1s;
+}
+.show_box-top {
+  width: 100%;
+  height: 70px;
+  position: relative;
+  border-bottom: solid 1px #f0f0f0;
+}
+.show_box-top div {
+  font-size: 26px;
+  line-height: 50px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: auto;
+  height: 50px;
+  color: #1f1f1f;
+  font-weight: 500;
+}
+.close {
+  text-decoration: none;
+  font-size: 40px;
+  line-height: 40px;
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #505050;
+}
+.close:hover {
+  color: #ea4335;
+}
+.show_box-body {
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+@media only screen and (max-width: 600px) {
+  .show_box-body {
+    height: calc(100vh - 105px);
+  }
+  .show_box-top div {
+    font-size: 16px;
+    line-height: 40px;
+    left: 5px;
+    top: 5px;
+    height: 40px;
+  }
+  .show_box-top div span:first-child {
+    font-size: 24px;
+  }
+  .show_box-top {
+    height: 50px;
+  }
+  .show_box-top img {
+    top: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+  }
+  .close {
+    text-decoration: none;
+    font-size: 30px;
+    line-height: 30px;
+    top: 10px;
+  }
+}
+/* Edit Profile Modal Ends */

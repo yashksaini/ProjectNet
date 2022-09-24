@@ -1,0 +1,158 @@
+<!-- <div class="container">
+  <h4 style="text-align: center" class="mt-2 mb-4">SignUp</h4>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <input
+            type="text"
+            placeholder="First Name"
+            class="form-control form-input"
+            [formControl]="myForm.controls['firstName']"
+          />
+        </div>
+        <div class="col-md-6">
+          <input
+            type="text"
+            placeholder="Last Name"
+            class="form-control form-input"
+            [formControl]="myForm.controls['lastName']"
+          />
+        </div>
+      </div>
+      <input
+        type="email"
+        placeholder="Email"
+        class="form-control form-input mt-2"
+        [formControl]="myForm.controls['email']"
+      />
+      <div
+        class="alert alert-warning mt-2"
+        *ngIf="
+          !myForm.controls['email'].valid && myForm.controls['email'].touched
+        "
+      >
+        A valid email is required
+      </div>
+      <input
+        type="password"
+        placeholder="Create Password"
+        class="form-control form-input mt-2"
+        [formControl]="myForm.controls['password']"
+      />
+      <div
+        class="alert alert-warning mt-2"
+        *ngIf="
+          !myForm.controls['password'].valid &&
+          myForm.controls['password'].touched
+        "
+      >
+        Password should be atleast 6 characters long.
+      </div>
+      <button class="btn sub_btn mt-2" type="submit" [disabled]="!myForm.valid">
+        Submit
+      </button>
+
+      <div class="alert alert-danger mt-2" *ngIf="userError.length > 0">
+        {{ userError }}
+      </div>
+      <div class="alert alert-success mt-2" *ngIf="message.length > 0">
+        {{ message }}
+      </div>
+
+      <h5
+        class="already_user"
+        data-bs-dismiss="modal"
+        style="text-align: center"
+        data-bs-toggle="modal"
+        data-bs-target="#login1"
+      >
+        Already have account? LogIn Here
+      </h5>
+    </div>
+  </form>
+</div> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 p-0 logo_box">
+      <div class="left_box">
+        <img src="../../assets/l_logo.png" />
+      </div>
+    </div>
+    <div class="col-md-6 right_box">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <h1 class="head_text">SignUp</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <p class="text_label">First Name</p>
+            <input
+              type="text"
+              class="input_box"
+              placeholder="First Name"
+              [formControl]="myForm.controls['firstName']"
+            />
+          </div>
+          <div class="col-md-6">
+            <p class="text_label">Last Name</p>
+            <input
+              type="text"
+              class="input_box"
+              placeholder="Last Name"
+              [formControl]="myForm.controls['lastName']"
+            />
+          </div>
+          <div class="col-md-12">
+            <p class="text_label">Email</p>
+            <input
+              type="email"
+              class="input_box"
+              placeholder="Email"
+              [formControl]="myForm.controls['email']"
+            />
+            <div
+              class="alert alert-warning mb-2"
+              *ngIf="
+                !myForm.controls['email'].valid &&
+                myForm.controls['email'].touched
+              "
+            >
+              A valid email is required
+            </div>
+          </div>
+          <div class="col-md-12">
+            <p class="text_label">Create Password</p>
+            <input
+              type="password"
+              class="input_box"
+              placeholder="Create Password"
+              [formControl]="myForm.controls['password']"
+            />
+            <div
+              class="alert alert-warning mb-2"
+              *ngIf="
+                !myForm.controls['password'].valid &&
+                myForm.controls['password'].touched
+              "
+            >
+              Password should be atleast 6 characters long.
+            </div>
+          </div>
+          <div class="col-md-12" style="text-align: center">
+            <button class="submit_btn" [disabled]="!myForm.valid">
+              Create Account
+            </button>
+            <div class="alert alert-danger mt-2" *ngIf="userError.length > 0">
+              {{ userError }}
+            </div>
+            <div class="alert alert-success mt-2" *ngIf="message.length > 0">
+              {{ message }}
+            </div>
+            <a href="home#login" class="login_text"
+              >Already have account? LogIn Here</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

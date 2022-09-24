@@ -1,0 +1,67 @@
+<div class="conn">
+  <div><i class="fas fa-users"></i> ({{ this.total }})</div>
+  <div>
+    <a href="network#requestrec"
+      >Requests <span *ngIf="this.requests > 0">{{ this.requests }}</span></a
+    >
+  </div>
+  <div>
+    <a href="network#requestsent"
+      >Sent <span *ngIf="this.sents > 0">{{ this.sents }}</span></a
+    >
+  </div>
+</div>
+
+<div class="c_box mt-1 mb-3">
+  <div *ngIf="showBox" class="mt-4">
+    <p>Connections appear here</p>
+  </div>
+  <div
+    class="card animate__animated animated animate__fadeIn"
+    *ngFor="let user of all_conn"
+  >
+    <div class="card_top">
+      <img src="{{ user.imageURL }}" />
+    </div>
+    <div class="card_bottom">
+      <h1>{{ user.name }}</h1>
+      <div class="card_det">
+        <div>
+          <h5>Projects</h5>
+          <p>{{ user.totalProjects }}</p>
+        </div>
+        <div>
+          <h5>Network</h5>
+          <p>{{ user.totalConnections }}</p>
+        </div>
+      </div>
+      <button routerLink="/profile/{{ user.id }}">View Profile</button>
+    </div>
+  </div>
+</div>
+<!-- request sent box -->
+<div id="requestsent">
+  <div class="show_box">
+    <div class="show_box-req-top">
+      <h4>Sents ({{ this.sents }})</h4>
+      <a class="req-close" href="network#"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="show_box-req-body">
+      <app-sents></app-sents>
+    </div>
+  </div>
+</div>
+<!-- Request Sent box end -->
+<!-- request Recieve box -->
+<div id="requestrec">
+  <div class="show_box">
+    <div class="show_box-req-top">
+      <h4>Requests ({{ this.requests }})</h4>
+      <a class="req-close" href="network#"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="show_box-req-body">
+      <app-requests></app-requests>
+    </div>
+  </div>
+</div>
+<!-- Request Recieve box end -->

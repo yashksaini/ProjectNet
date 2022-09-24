@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 p-0 logo_box">
+      <div class="left_box">
+        <img src="../../assets/l_logo.png" />
+      </div>
+    </div>
+    <div class="col-md-6 right_box">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+        <h1 class="head_text">Login</h1>
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text_label">Email</p>
+            <input
+              type="email"
+              class="input_box"
+              placeholder="Email"
+              [formControl]="myForm.controls['email']"
+            />
+            <div
+              class="alert alert-warning mb-2"
+              *ngIf="
+                !myForm.controls['email'].valid &&
+                myForm.controls['email'].touched
+              "
+            >
+              A valid email is required
+            </div>
+          </div>
+          <div class="col-md-12">
+            <p class="text_label">Password</p>
+            <input
+              type="password"
+              class="input_box"
+              placeholder="Password"
+              [formControl]="myForm.controls['password']"
+            />
+            <div
+              class="alert alert-warning mb-2"
+              *ngIf="
+                !myForm.controls['password'].valid &&
+                myForm.controls['password'].touched
+              "
+            >
+              Password is required.
+            </div>
+          </div>
+          <div class="col-md-12" style="text-align: center">
+            <button class="submit_btn" [disabled]="!myForm.valid">Login</button>
+            <div class="alert alert-danger mt-2" *ngIf="userError.length > 0">
+              {{ userError }}
+            </div>
+            <div class="alert alert-success mt-2" *ngIf="message.length > 0">
+              {{ message }}
+            </div>
+            <a href="home#signup" class="login_text"
+              >Don't have account? Create Here</a
+            >
+            <br />
+            <a href="home#reset" class="login_text">Forgot Password?</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

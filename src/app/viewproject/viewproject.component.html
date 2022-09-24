@@ -1,0 +1,170 @@
+<div
+  class="container-fluid"
+  *ngFor="let project of projectData"
+  [class]="project"
+>
+  <h1 class="prj_name">
+    <i class="fas fa-project-diagram"></i> {{ project.data().project_name }}
+  </h1>
+  <hr />
+  <div class="row">
+    <div class="col-xl-4 col-lg-6 proj_img">
+      <div class="prj_img">
+        <img src="{{ project.data().img_url }}" />
+      </div>
+      <div>
+        <button class="like_btn" [disabled]="likeDisabled" (click)="likeAdd()">
+          <span [innerHTML]="likeButton"></span></button
+        ><span class="like_count">{{ totalLikes }}</span>
+        <button class="comm_btn">
+          <span> <i class="fas fa-comment"></i></span></button
+        ><span class="comm_count">{{ totalcomment }}</span>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-6 bg-white p-2 proj_data">
+      <h4 class="main_lang">
+        <span class="main_lang_box"
+          ><i class="fas fa-code"></i>
+          <div class="tooltip_box">Main language used</div></span
+        >
+        <span>{{ project.data().main_lang }}</span>
+      </h4>
+      <hr />
+      <h4 class="level">
+        <i class="show_level">{{ showLevel }}</i>
+        level project (<span *ngIf="project.data().level == 1"
+          ><i class="far fa-star"></i
+        ></span>
+        <span *ngIf="project.data().level == 2"
+          ><i class="far fa-star"></i><i class="far fa-star"></i
+        ></span>
+        <span *ngIf="project.data().level == 3"
+          ><i class="far fa-star"></i><i class="far fa-star"></i
+          ><i class="far fa-star"></i></span
+        >)
+      </h4>
+      <hr />
+      <h4 class="skills"><i>Skills</i> required for the project</h4>
+      <div>
+        <span class="badge skill" *ngFor="let skill of keySkills">
+          {{ skill }}
+        </span>
+      </div>
+      <hr />
+      <div>
+        <p class="last_update">
+          {{ project.data().created.toDate() | date: "MMM dd, yyyy " }}
+        </p>
+        <div *ngIf="project.data().link.length > 1">
+          <a href="{{ project.data().link }}" target="_blank" class="prj_link">
+            <span class="arrow-right"
+              ><i class="fas fa-chevron-right"></i
+            ></span>
+            View Project
+          </a>
+        </div>
+        <div *ngIf="project.data().link.length == 0">
+          <p class="mutedText">Project Link not given.</p>
+        </div>
+        <a
+          class="btn edit_btn"
+          href="{{ currentURL }}#editproject"
+          *ngIf="project.data().owner == currentUser.uid"
+        >
+          Edit
+        </a>
+        <a
+          class="btn edit_btn"
+          href="{{ currentURL }}#removeproject"
+          *ngIf="project.data().owner == currentUser.uid"
+        >
+          <i class="fas fa-trash"></i>
+        </a>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-6">
+      <div class="comments_box">
+        <app-comment></app-comment>
+      </div>
+    </div>
+    <div class="col-xl-4 col-lg-6" style="text-align: center">
+      <div class="created-box" *ngFor="let profile of profileData">
+        <div class="row">
+          <div class="col-12">
+            <h4>Created By</h4>
+            <img src="{{ profile.data().imageURL }}" class="created-img" />
+          </div>
+          <div class="col-12">
+            <h5>{{ profile.data().name }}</h5>
+            <button
+              class="created-profile"
+              routerLink="/profile/{{ profile.data().id }}"
+            >
+              View Profile
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 col-lg-6">
+      <h4 class="about-head">About Project</h4>
+      <hr />
+      <p [innerHTML]="project.data().about" class="about-text"></p>
+      <p class="about-text mutedText" *ngIf="project.data().about == 0">
+        No information about the project has been added.
+      </p>
+    </div>
+    <div class="col-12 mt-4">
+      <h4 class="about-head">Inside Project Description</h4>
+      <hr />
+      <div [innerHTML]="project.data().key_features"></div>
+      <p class="about-text mutedText" *ngIf="project.data().key_features == 0">
+        No detailed information about the project has been added.
+      </p>
+    </div>
+  </div>
+  <hr />
+</div>
+
+<!-- Edit Project box -->
+<div id="editproject">
+  <div class="show_box-top">
+    <div>Edit Project</div>
+    <a href="{{ currentURL }}#" class="close"><i class="fas fa-times"></i></a>
+  </div>
+  <div class="show_box-body">
+    <app-editproject></app-editproject>
+  </div>
+</div>
+<!-- Edit Project box end -->
+
+<!-- Remove Project Box -->
+<div id="removeproject" *ngFor="let project of projectData">
+  <div class="show_box">
+    <div class="show_box-req-top">
+      <h4>ProjectNet</h4>
+      <a class="req-close" href="{{ currentURL }}#"
+        ><i class="fas fa-times"></i
+      ></a>
+    </div>
+    <div class="show_box-req-body">
+      <div>
+        <h4>Really want to remove project?</h4>
+        <div class="btn_box">
+          <a
+            routerLink="profile/{{ currentUser.uid }}"
+            *ngIf="project.data().owner == currentUser.uid"
+            (click)="deleteProject(project.data().p_id)"
+            >Yes</a
+          >
+          <a
+            href="{{ currentURL }}#"
+            *ngIf="project.data().owner == currentUser.uid"
+            >No</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Remove Project Box End -->

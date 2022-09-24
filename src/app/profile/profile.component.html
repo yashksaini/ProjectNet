@@ -1,0 +1,165 @@
+<div *ngFor="let profile of profileData">
+  <div class="profile_head">
+    <div class="profile_box">
+      <img src="{{ profile.data().imageURL }}" />
+      <img src="../../assets/verified.png" alt="" class="verified" />
+    </div>
+    <div class="profile_box">
+      <h1>{{ profile.data().name }}</h1>
+      <h4>{{ profile.data().email }}</h4>
+      <p routerLink="/network" *ngIf="currentProfile">
+        {{ total }} Connections
+      </p>
+      <p *ngIf="!currentProfile">{{ total }} Connections</p>
+    </div>
+    <h3><img src="../../assets/name1.png" /></h3>
+    <a
+      class="anchor"
+      href="{{ currentURL }}#editprofile"
+      *ngIf="currentProfile"
+    >
+      Edit Profile
+    </a>
+    <button (click)="con_req()" *ngIf="!currentProfile && showConnect">
+      Connect
+    </button>
+    <a
+      class="anchor"
+      routerLink="/network"
+      *ngIf="!currentProfile && !showConnect"
+    >
+      Requested
+    </a>
+    <a
+      class="anchor"
+      href="{{ currentURL }}#removeuser"
+      *ngIf="!currentProfile && req_status"
+    >
+      Remove
+    </a>
+
+    <div class="profile_icon">
+      <a
+        href="{{ profile.data().linkedIn }}"
+        *ngIf="profile.data().linkedIn.length > 0"
+        target="_blank"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+      <a
+        href="{{ profile.data().twitter }}"
+        *ngIf="profile.data().twitter.length > 0"
+        target="_blank"
+        ><i class="fab fa-twitter"></i
+      ></a>
+    </div>
+  </div>
+  <hr style="color: #afb4bb; margin: 2px 0" />
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="profile_content" *ngIf="profile.data().about.length > 1">
+          <h1>About</h1>
+          <p
+            id="about"
+            *ngIf="profile.data().about.length > 0"
+            [innerHTML]="profile.data().about"
+          ></p>
+        </div>
+        <div class="profile_content" *ngIf="profile.data().about.length == 1">
+          <h1>About</h1>
+          <div class="message">About appear here..</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="profile_content" *ngIf="keySkills.length > 1">
+          <h1>Skills</h1>
+          <span class="badge skill" *ngFor="let skill of keySkills">
+            {{ skill }}
+          </span>
+        </div>
+        <div class="profile_content" *ngIf="keySkills.length == 1">
+          <h1>Skills</h1>
+          <div class="message">Skills appear here..</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr style="color: #afb4bb" />
+  <div class="totalData">
+    <span
+      ><i class="fas fa-heart"></i>&nbsp;<i>s</i> <b>{{ totalLikes }}</b></span
+    >
+    <span
+      ><i class="fas fa-comment"></i>&nbsp; <i>s</i>
+      <b>{{ totalComments }}</b></span
+    >
+  </div>
+  <h1 class="projects_count">
+    Projects ( {{ totalProjects }} ) <i class="fas fa-angle-down"></i>
+  </h1>
+  <hr style="color: #afb4bb" />
+</div>
+
+<div class="c_box mb-3">
+  <div
+    class="prj_card"
+    *ngFor="let project of projectData"
+    routerLink="/view/{{ project.p_id }}"
+  >
+    <div class="prj_card_top">
+      <div><img src="{{ project.img_url }}" /></div>
+      <span>{{ project.main_lang }}</span>
+    </div>
+    <div class="prj_card_bottom">
+      <div class="prj_card_det">
+        <span>{{ project.project_name }}</span>
+        <span>{{ project.created.toDate() | date: "MMM-yy" }}</span>
+      </div>
+      <div class="prj_link">
+        <div>
+          <i class="far fa-heart"></i> <span>{{ project.totalLikes }}</span>
+        </div>
+        <div>
+          <i class="far fa-comment"></i>
+          <span>{{ project.totalComments }}</span>
+        </div>
+        <div>View</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="projectData.length == 0" class="message">
+  Projects appear here..
+</div>
+
+<!-- Edit Profile box -->
+<div id="editprofile">
+  <div class="show_box-top">
+    <div>Edit Profile</div>
+    <a href="{{ currentURL }}" class="close"><i class="fas fa-times"></i></a>
+  </div>
+  <div class="show_box-body">
+    <app-editprofile></app-editprofile>
+  </div>
+</div>
+<!-- Edit Profile box end -->
+<div id="removeuser">
+  <div class="show_box">
+    <div class="show_box-req-top">
+      <h4>ProjectNet</h4>
+      <a class="req-close" href="{{ currentURL }}"
+        ><i class="fas fa-times"></i
+      ></a>
+    </div>
+    <div class="show_box-req-body">
+      <div>
+        <h5>Really want to remove connection?</h5>
+        <div class="btn_box">
+          <a routerLink="/network" (click)="drop_req()">Yes</a>
+          <a href="{{ currentURL }}#">No</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Remove Project Box End -->
