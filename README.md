@@ -13,7 +13,7 @@
 - [Getting Started](#getting-started)
 
 ## Introduction
-ProjectNet is a collaborative project-sharing application built with Angular, CSS, Firebase, and TypeScript. It empowers developers to create accounts, connect with others, and showcase their projects.
+ProjectNet is a robust and user-friendly collaborative project-sharing application that has been meticulously crafted using a combination of cutting-edge technologies such as Angular, CSS, Firebase, and TypeScript. Designed with the developer community in mind, ProjectNet offers a multifaceted platform that enables developers to unlock a multitude of capabilities, facilitating collaboration, networking, and the exhibition of their innovative projects.
 
 ## Demo
 
